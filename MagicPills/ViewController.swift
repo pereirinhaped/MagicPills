@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
 	
 	@IBOutlet weak var magicPillsImg: UIImageView!
 	@IBOutlet weak var magicPillsLbl: UILabel!
@@ -32,8 +32,17 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
 		StatePicker.dataSource = self
 		StatePicker.delegate = self
+		nameTxtFld.delegate = self
+		adressTxtFld.delegate = self
+		cityTxtFld.delegate = self
+		zipCodeTextFld.delegate = self
+		
+		let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
+		view.addGestureRecognizer(tap)
+		
 	}
 
 	override func didReceiveMemoryWarning() {
@@ -49,6 +58,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 		toggleBuyNow()
 	}
 	
+	// PickerView Settings
 	
 	func numberOfComponents(in pickerView: UIPickerView) -> Int {
 		// Defines the number of columns in the PickerView
@@ -67,6 +77,17 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 	func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
 		statePickerBtn.setTitle(states[row], for: UIControlState.normal)
 		toggleStatePicker()
+	}
+	
+	// UITextViewDelegate Options
+	
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		dismissKeyboard()
+		return false
+	}
+	
+	func dismissKeyboard() {
+		view.endEditing(true)
 	}
 	
 	// View's visibility controls
