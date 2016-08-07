@@ -14,14 +14,12 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 	
 	@IBOutlet weak var statePickerBtn: UIButton!
 	
-	let states = ["Lisboa", "Porto", "Faro", "Évora", "Santarém", "Leiria"]
-	
+	let states = ["Portugal", "Spain", "France", "Italy", "Germany", "Holland"].sorted()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		StatePicker.dataSource = self
 		StatePicker.delegate = self
-		
 	}
 
 	override func didReceiveMemoryWarning() {
