@@ -151,6 +151,12 @@
                                     <action selector="buyNowBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="agc-Dp-WQ9"/>
                                 </connections>
                             </button>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="successIndicator" translatesAutoresizingMaskIntoConstraints="NO" id="QaP-n1-GBd">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="157" id="QUh-uP-zC3"/>
+                                    <constraint firstAttribute="width" constant="157" id="wVo-O6-UIB"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -167,6 +173,7 @@
                             <constraint firstItem="eYD-Rt-b47" firstAttribute="top" secondItem="3Bs-zq-1Dx" secondAttribute="bottom" id="JZe-7V-4As"/>
                             <constraint firstItem="wd8-rN-rCC" firstAttribute="trailing" secondItem="Nrx-tL-PaY" secondAttribute="trailing" id="Jum-8C-pe8"/>
                             <constraint firstItem="wyx-c6-lWF" firstAttribute="top" secondItem="eYD-Rt-b47" secondAttribute="bottom" constant="8" id="Ki9-8q-NlK"/>
+                            <constraint firstItem="QaP-n1-GBd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Kx8-pu-0IL"/>
                             <constraint firstItem="4c0-lJ-QHT" firstAttribute="top" secondItem="qfC-nk-cLf" secondAttribute="bottom" constant="10" id="MwC-Gq-Xx3"/>
                             <constraint firstItem="3Bs-zq-1Dx" firstAttribute="leading" secondItem="a81-eS-4PI" secondAttribute="leading" id="NJX-ji-vxc"/>
                             <constraint firstItem="4c0-lJ-QHT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ng3-8S-qjz"/>
@@ -177,6 +184,7 @@
                             <constraint firstItem="wDu-lc-hJh" firstAttribute="leading" secondItem="wyx-c6-lWF" secondAttribute="leading" id="Vaj-O3-sec"/>
                             <constraint firstItem="zJc-bL-BJy" firstAttribute="top" secondItem="cmE-OM-WDu" secondAttribute="bottom" constant="25" id="Y9F-re-hll"/>
                             <constraint firstItem="wd8-rN-rCC" firstAttribute="top" secondItem="Nrx-tL-PaY" secondAttribute="bottom" id="d6w-tV-LAl"/>
+                            <constraint firstItem="QaP-n1-GBd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e2x-7N-Fcg"/>
                             <constraint firstItem="krf-45-2Jm" firstAttribute="top" secondItem="J5e-x8-zsw" secondAttribute="bottom" id="efX-oV-Uqy"/>
                             <constraint firstItem="J5e-x8-zsw" firstAttribute="trailing" secondItem="ghZ-5b-LhJ" secondAttribute="trailing" id="fl0-px-VrV"/>
                             <constraint firstItem="ghZ-5b-LhJ" firstAttribute="trailing" secondItem="wd8-rN-rCC" secondAttribute="trailing" id="gjt-br-5oO"/>
@@ -201,8 +209,20 @@
                     </view>
                     <connections>
                         <outlet property="StatePicker" destination="4c0-lJ-QHT" id="py1-SY-xNM"/>
+                        <outlet property="adressLbl" destination="wyx-c6-lWF" id="3EP-7H-mFc"/>
+                        <outlet property="adressTxtFld" destination="wDu-lc-hJh" id="De4-lX-Vop"/>
                         <outlet property="buyNowBtn" destination="f35-ob-5cs" id="8os-F4-rFo"/>
+                        <outlet property="cityLbl" destination="Nrx-tL-PaY" id="Mmv-nH-kzX"/>
+                        <outlet property="cityTxtFld" destination="wd8-rN-rCC" id="qsh-LF-Jt4"/>
+                        <outlet property="dividerView" destination="a81-eS-4PI" id="GLq-Ui-qk8"/>
+                        <outlet property="magicPillsImg" destination="cmE-OM-WDu" id="BmP-by-JJG"/>
+                        <outlet property="magicPillsLbl" destination="zJc-bL-BJy" id="y3t-ic-mkB"/>
+                        <outlet property="nameLbl" destination="3Bs-zq-1Dx" id="fsZ-M4-ftj"/>
+                        <outlet property="nameTxtFld" destination="eYD-Rt-b47" id="Juh-Xl-Sze"/>
+                        <outlet property="priceLbl" destination="HZa-1r-0u4" id="phe-LS-RKf"/>
+                        <outlet property="stateLbl" destination="ghZ-5b-LhJ" id="7s0-kq-Ic5"/>
                         <outlet property="statePickerBtn" destination="qfC-nk-cLf" id="on5-Jy-O0j"/>
+                        <outlet property="sucessImg" destination="QaP-n1-GBd" id="usZ-3h-AJq"/>
                         <outlet property="zipCodeLbl" destination="J5e-x8-zsw" id="8yq-j6-c0m"/>
                         <outlet property="zipCodeTextFld" destination="krf-45-2Jm" id="GBB-Er-JcM"/>
                     </connections>
@@ -215,5 +235,6 @@
     <resources>
         <image name="buyNowBtn" width="225" height="45"/>
         <image name="miraclePillEmoji" width="90" height="90"/>
+        <image name="successIndicator" width="180" height="180"/>
     </resources>
 </document>

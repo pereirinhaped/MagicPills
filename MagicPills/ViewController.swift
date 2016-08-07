@@ -10,15 +10,23 @@ import UIKit
 
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 	
+	@IBOutlet weak var magicPillsImg: UIImageView!
+	@IBOutlet weak var magicPillsLbl: UILabel!
+	@IBOutlet weak var priceLbl: UILabel!
+	@IBOutlet weak var dividerView: UIView!
+	@IBOutlet weak var nameLbl: UILabel!
+	@IBOutlet weak var nameTxtFld: UITextField!
+	@IBOutlet weak var adressLbl: UILabel!
+	@IBOutlet weak var adressTxtFld: UITextField!
+	@IBOutlet weak var cityLbl: UILabel!
+	@IBOutlet weak var cityTxtFld: UITextField!
+	@IBOutlet weak var stateLbl: UILabel!
 	@IBOutlet weak var StatePicker: UIPickerView!
-	
 	@IBOutlet weak var statePickerBtn: UIButton!
-	
 	@IBOutlet weak var zipCodeLbl: UILabel!
-	
 	@IBOutlet weak var zipCodeTextFld: UITextField!
-	
 	@IBOutlet weak var buyNowBtn: UIButton!
+	@IBOutlet weak var sucessImg: UIImageView!
 	
 	let states = ["Portugal", "Spain", "France", "Italy", "Germany", "Holland"].sorted()
 	
@@ -38,6 +46,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 	}
 	
 	@IBAction func buyNowBtnPressed(_ sender: AnyObject) {
+		toggleBuyNow()
 	}
 	
 	
@@ -73,6 +82,44 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 			zipCodeLbl.isHidden = false
 			zipCodeTextFld.isHidden = false
 			buyNowBtn.isHidden = false
+		}
+	}
+	
+	func toggleBuyNow() {
+		if !buyNowBtn.isHidden {
+			magicPillsImg.isHidden = true
+			magicPillsLbl.isHidden = true
+			priceLbl.isHidden = true
+			dividerView.isHidden = true
+			nameLbl.isHidden = true
+			nameTxtFld.isHidden = true
+			adressLbl.isHidden = true
+			adressTxtFld.isHidden = true
+			cityLbl.isHidden = true
+			cityTxtFld.isHidden = true
+			stateLbl.isHidden = true
+			statePickerBtn.isHidden = true
+			zipCodeLbl.isHidden = true
+			zipCodeTextFld.isHidden = true
+			buyNowBtn.isHidden = true
+			sucessImg.isHidden = false
+		} else {
+			magicPillsImg.isHidden = false
+			magicPillsLbl.isHidden = false
+			priceLbl.isHidden = false
+			dividerView.isHidden = false
+			nameLbl.isHidden = false
+			nameTxtFld.isHidden = false
+			adressLbl.isHidden = false
+			adressTxtFld.isHidden = false
+			cityLbl.isHidden = false
+			cityTxtFld.isHidden = false
+			stateLbl.isHidden = false
+			statePickerBtn.isHidden = false
+			zipCodeLbl.isHidden = false
+			zipCodeTextFld.isHidden = false
+			buyNowBtn.isHidden = false
+			sucessImg.isHidden = true
 		}
 	}
 	
