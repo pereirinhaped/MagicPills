@@ -14,6 +14,12 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 	
 	@IBOutlet weak var statePickerBtn: UIButton!
 	
+	@IBOutlet weak var zipCodeLbl: UILabel!
+	
+	@IBOutlet weak var zipCodeTextFld: UITextField!
+	
+	@IBOutlet weak var buyNowBtn: UIButton!
+	
 	let states = ["Portugal", "Spain", "France", "Italy", "Germany", "Holland"].sorted()
 	
 	override func viewDidLoad() {
@@ -28,8 +34,12 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 	}
 
 	@IBAction func stateBtnPressed(_ sender: AnyObject) {
-		StatePicker.isHidden = false
+		toggleStatePicker()
 	}
+	
+	@IBAction func buyNowBtnPressed(_ sender: AnyObject) {
+	}
+	
 	
 	func numberOfComponents(in pickerView: UIPickerView) -> Int {
 		// Defines the number of columns in the PickerView
@@ -47,7 +57,23 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 	
 	func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
 		statePickerBtn.setTitle(states[row], for: UIControlState.normal)
-		StatePicker.isHidden = true
+		toggleStatePicker()
+	}
+	
+	// View's visibility controls
+	
+	func toggleStatePicker() {
+		if StatePicker.isHidden {
+			StatePicker.isHidden = false
+			zipCodeLbl.isHidden = true
+			zipCodeTextFld.isHidden = true
+			buyNowBtn.isHidden = true
+		} else {
+			StatePicker.isHidden = true
+			zipCodeLbl.isHidden = false
+			zipCodeTextFld.isHidden = false
+			buyNowBtn.isHidden = false
+		}
 	}
 	
 }
